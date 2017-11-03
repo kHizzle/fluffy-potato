@@ -1,0 +1,37 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+public class abc {
+public static void main(String[] args)throws FileNotFoundException{
+File file = new File("input.txt");
+Scanner sc = new Scanner(file);
+matchIndex(sc);
+
+}
+public static void matchIndex(Scanner sc){
+int line=1;
+while(sc.hasNextLine()){
+System.out.print( "lines "+Integer.toString(line)+" and "+Integer.toString(line+1)+": ");
+String s=sc.nextLine();
+String t=sc.nextLine();
+s=s.trim();
+t=t.trim();
+int l=Math.min(s.length(),t.length());
+Boolean match=false;
+
+for(int i=0;i<l;i++){
+if(s.charAt(i)==t.charAt(i)){
+System.out.print(Integer.toString(i)+" ");
+match=true;
+}
+}
+if(!match){
+System.out.println("none ");
+}
+else{
+System.out.println();
+}
+line=line+2;
+}
+}
+}
